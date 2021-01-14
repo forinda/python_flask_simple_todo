@@ -1,0 +1,7 @@
+<div>
+    {% with messages=get_flashed_messages() %}
+        {% for message in messages %}
+            <li>{{message}}</li>
+        {% endfor %}
+    {% endwith %}
+</div>

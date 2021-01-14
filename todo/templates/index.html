@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock title %}
+{% block content %}
+<h1>My todos</h1>
+{% if todos %}
+{% for todo in todos %}
+<p>{{todo.body}}
+    <a href="/update/{{todo.id}}">Update</a>
+    <a href="/delete/{{todo.id}}">Delete</a>
+</p>
+
+{% endfor %}
+{% else %}
+<h1>Hello there are no todos</h1>
+{% endif %}
+
+{% endblock content %}
