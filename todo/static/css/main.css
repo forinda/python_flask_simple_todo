@@ -30,6 +30,7 @@ table,tr,td,th{
 }
 tr,th,td{
     padding:20px;
+    transition: 100ms ease;
 }
 
 tr:nth-child(even){
@@ -41,6 +42,11 @@ tr{
 tr li{
     list-style: none;
 }
+
+tr:hover{
+    background-color: #777676;
+    color: #f3f2f2;
+}
 td{
     padding: 10px;
     vertical-align:bottom;
@@ -50,7 +56,7 @@ td{
 td a{
     color:#fcf9f9;
     text-decoration: none;
-    padding: 5px;
+    padding: 8px;
     border-radius: 8px;
 }
 td a.del{
@@ -62,26 +68,32 @@ td a.add{
 
 nav{
     height: 3rem;
-    position: fixed;
+    background-color:#9fc7ce;
+    /* position: fixed; */
     width: 100%;
     padding: 10px;
-    top: 0;
+    /* top: 0; */
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #000000 2px 5px 10px,#000000 -2px 5px 10px;
     
 }
 nav a{
-    color: #20bba1;
+    color: #202020;
     text-decoration: none;
     text-transform: uppercase;
     margin-left: 20px;
+    flex-basis: 1;
     /* background-color:#000000; */
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
     vertical-align: middle;
 }
-nav a{
-
+nav a:hover{
+    border-bottom: 1px solid;
 }
+
 
 .scroll-top{
     position: fixed;
@@ -122,4 +134,30 @@ form input{
 textarea{
     padding: 10px;
     border-radius: 20px;
+    color: #33c9f7;
+    background-color: #222427;
+}
+
+[type="submit"]{
+    padding: 10px 30px;
+    border-radius: 8px;
+    background-color: #3ab9eb;
+    margin-top: 40px;
+}
+.msg-success{
+    color: #295e27;
+    background: #c3f1dacb;
+    padding: 10px 30px;
+    text-align: center;
+    display: block;
+    /* max-width: 40%; */
+    place-self: center;
+}
+.msg-danger{
+    color: #e72929;
+    background: #f5c0c0cb;
+    padding: 10px 30px;
+    text-align: center;
+    display: block;
+    /* max-width: 40%; */
 }

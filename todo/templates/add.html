@@ -7,9 +7,9 @@
         <p>
             {{form.body.label}} <br>
             {{form.body(cols=50, rows=10,autofocus=true)}}  <br>
-            {% for err in form.body.erros %}
+            {% for err in form.body.errors %}
                 {% if err %}
-                    <span style="color:red;">{{err}}</span>
+                    <span style="color:red;margin-top:20px;">{{err}}</span>
                 {% endif %}
             {% endfor %}
         </p>

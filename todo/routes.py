@@ -27,7 +27,7 @@ def add():
         todo = Todo(body=form.body.data, done=form.done.data)
         db.session.add(todo)
         db.session.commit()
-        flash("Todo added successfully")
+        flash("Todo added successfully", 'msg-success')
         return redirect(url_for('index'))
 
     return render_template('add.html', form=form, title=title)
@@ -41,7 +41,7 @@ def update(id):
     if form.validate_on_submit():
         todo.body = form.body.data
         db.session.commit()
-        flash("Todo updated successfully")
+        flash("Todo updated successfully",category='msg-success')
         return redirect(url_for('index'))
     if request.method == 'GET':
         form.body.data = todo.body
@@ -55,4 +55,5 @@ def delete(id):
     print(td.id)
     db.session.delete(td)
     db.session.commit()
+    flash(f"Deleted the todo: {td.body}", 'msg-danger')
     return redirect('/')
