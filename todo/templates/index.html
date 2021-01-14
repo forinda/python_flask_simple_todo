@@ -1,20 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} {% endblock title %} {% block
+content %}
+<h1 class="todo-title">My todos</h1>
+<table border="1" cellspacing="2" , cellpadding="2">
+  <tr>
+    <th>My todo</th>
+    <th>Time</th>
+    <th>Actions</th>
+  </tr>
 
-{% block title %}
+  {% if todos %} {% for todo in todos %}
+  <tr>
+    <ol>
+      <td>
+        <li>{{todo.body}}</li>
+      </td>
 
-{% endblock title %}
-{% block content %}
-<h1>My todos</h1>
-{% if todos %}
-{% for todo in todos %}
-<p>{{todo.body}}
-    <a href="/update/{{todo.id}}">Update</a>
-    <a href="/delete/{{todo.id}}">Delete</a>
-</p>
-
-{% endfor %}
+      <td>{{todo.time}}</td>
+      <td>
+        <a href="/update/{{todo.id}}" class="add">Update</a>
+        <a href="/delete/{{todo.id}}" class="del">Delete</a>
+      </td>
+    </ol>
+  </tr>
+  {% endfor %}
+</table>
 {% else %}
-<h1>Hello there are no todos</h1>
-{% endif %}
-
-{% endblock content %}
+<h1 class="no-todo">There are no todos in your list</h1>
+{% endif %} {% endblock content %}

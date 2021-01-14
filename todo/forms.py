@@ -13,5 +13,5 @@ class TodoCreationForm(FlaskForm):
 
 
 class TodoUpdateForm(FlaskForm):
-    body = StringField('Body', validators=[DataRequired()])
+    body = TextAreaField('Body', validators=[DataRequired()])
     submit = SubmitField('Update')

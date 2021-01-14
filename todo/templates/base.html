@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-        
-    {% endblock title %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    {% block title %}{% endblock title %}
 </head>
+
 <body>
-    {% include '/include/nav.html' %}
-    {% include '/include/_message.html' %}
-    {% block content %}
-        
-    {% endblock content %}
+    <div class="main-container">
+        {% include '/include/nav.html' %}
+        {% include '/include/_message.html' %}
+        <div class="body-container">
+            {% block content %}{% endblock content %}
+        </div>
+        <div class="scroll-top"><a href="#">Scroll top</a></div>
+    </div>
+
 </body>
+
 </html>

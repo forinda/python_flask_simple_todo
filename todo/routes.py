@@ -1,14 +1,15 @@
 from todo import app
-from todo.models import Todo,db
+from todo.models import Todo, db
 from todo.forms import TodoCreationForm
 from todo.forms import TodoUpdateForm
 from flask import (request,
-                    redirect,
-                    url_for,
-                    render_template,
-                    flash,
-                    session
-                    )
+                   redirect,
+                   url_for,
+                   render_template,
+                   flash,
+                   session
+                   )
+
 
 @app.route('/')
 @app.route('/index')
@@ -18,9 +19,9 @@ def index():
     return render_template('index.html', todos=todos)
 
 
-@app.route('/add',methods=['GET','POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def add():
-    title='add'
+    title = 'add'
     form = TodoCreationForm()
     if form.validate_on_submit():
         todo = Todo(body=form.body.data, done=form.done.data)
@@ -28,12 +29,13 @@ def add():
         db.session.commit()
         flash("Todo added successfully")
         return redirect(url_for('index'))
-    
+
     return render_template('add.html', form=form, title=title)
 
-@app.route('/update/<int:id>',methods=['GET','POST'])
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    title='updtate'
+    title = 'updtate'
     form = TodoUpdateForm()
     todo = Todo.query.filter_by(id=id).first()
     if form.validate_on_submit():
@@ -46,11 +48,11 @@ def update(id):
         # form.done.data = todo.done
     return render_template('update.html', form=form, title=title)
 
-@app.route('/delete/<int:id>',methods=['GET','POST'])
+
+@app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
-    td=Todo.query.get(id)
+    td = Todo.query.get(id)
     print(td.id)
     db.session.delete(td)
     db.session.commit()
     return redirect('/')
-

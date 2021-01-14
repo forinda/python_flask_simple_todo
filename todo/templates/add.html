@@ -5,14 +5,15 @@
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
-            {{form.body.label}}
-            {{form.body}}  <br>
+            {{form.body.label}} <br>
+            {{form.body(cols=50, rows=10,autofocus=true)}}  <br>
             {% for err in form.body.erros %}
                 {% if err %}
                     <span style="color:red;">{{err}}</span>
                 {% endif %}
             {% endfor %}
         </p>
-        <p>{{form.submit}}</p>
+        <p>{{form.submit(class="add")}}</p>
     </form>
+    
 {% endblock content %}
