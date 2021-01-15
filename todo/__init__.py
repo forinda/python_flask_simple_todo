@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///app/app.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=True
 app.config["SECRET_KEY"] = token_hex(20)
-app.config['DEBUG']=True
+app.config['DEBUG']=False
 
 
 from todo import routes
