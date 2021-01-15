@@ -17,8 +17,8 @@ content %}
 
       <td>{{todo.time}}</td>
       <td>
-        <a href="/update/{{todo.id}}" class="add">Update</a>
-        <a href="/delete/{{todo.id}}" class="del">Delete</a>
+        <a href="{{url_for('update',id=todo.id)}}" class="add">Update</a>
+        <a href="{{url_for('delete', id=todo.id)}}" class="del">Delete</a>
       </td>
     </ol>
   </tr>

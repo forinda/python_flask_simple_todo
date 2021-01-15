@@ -5,7 +5,7 @@
         {{ form.hidden_tag() }}
         <p>
             {{form.body.label}}
-            {{form.body( cols=50, rows=10)}}  <br>
+            {{form.body( cols=50, rows=10, autofocus=True)}}  <br>
             {% for err in form.body.errors %}
                 {% if err %}
                     <span style="color:red; margin-top:20px;">{{err}}</span>

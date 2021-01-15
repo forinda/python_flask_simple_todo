@@ -68,7 +68,7 @@ td a.add{
 
 nav{
     height: 3rem;
-    background-color:#9fc7ce;
+    background-color:#a6a8a8;
     /* position: fixed; */
     width: 100%;
     padding: 10px;
@@ -134,15 +134,16 @@ form input{
 textarea{
     padding: 10px;
     border-radius: 20px;
-    color: #33c9f7;
-    background-color: #222427;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 [type="submit"]{
     padding: 10px 30px;
     border-radius: 8px;
     background-color: #3ab9eb;
-    margin-top: 40px;
+    margin: auto;
+    width: 300px;
 }
 .msg-success{
     color: #295e27;

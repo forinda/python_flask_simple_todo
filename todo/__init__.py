@@ -12,8 +12,9 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 # app.config.from_json(config.conf)
 app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///app/app.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=True
 app.config["SECRET_KEY"] = token_hex(20)
+app.config['DEBUG']=True
 
 
 from todo import routes
